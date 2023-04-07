@@ -30,9 +30,8 @@ public class AudioInput : MonoBehaviour
     void Awake()
     {
         loudestRawVolume = 0.0001f;
-        micName = Microphone.devices[0];
+        micName = Microphone.devices[1];
         micClip = Microphone.Start(micName, true, 20, AudioSettings.outputSampleRate);
-        print(AudioSettings.outputSampleRate);
         audioSource.clip = micClip;
         audioSource.Play();
         recentVolumes = new Queue<float>();
